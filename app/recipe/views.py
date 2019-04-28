@@ -20,6 +20,6 @@ class TagViewSet(viewsets.GenericViewSet,
         """Return objects for the current authenticated user only"""
         return self.queryset.filter(user=self.request.user).order_by('-name')
 
-#    def perform_create(self, serializer):
-#        """Create a new tag"""
-#        serializer.save(user=self.request.user)
+    def perform_create(self, serializer):
+        """Create a new tag"""
+        serializer.save(user=self.request.user)
