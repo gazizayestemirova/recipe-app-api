@@ -2,7 +2,7 @@ from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from core.models import Tag, Ingridient
+from core.models import Tag, Ingredient
 
 from recipe import serializers
 
@@ -29,7 +29,7 @@ class TagViewSet(BaseRecipeAttrViewSet):
     serializer_class = serializers.TagSerializer
 
 
-class IngridientViewSet(BaseRecipeAttrViewSet):
-    """Manage ingridients in the database"""
-    queryset = Ingridient.objects.all()
-    serializer_class = serializers.IngridientSerializer
+class IngredientViewSet(BaseRecipeAttrViewSet):
+    """Manage ingredients in the database"""
+    queryset = Ingredient.objects.all()
+    serializer_class = serializers.IngredientSerializer
